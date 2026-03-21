@@ -163,6 +163,35 @@ you need it to be mutable #}
   (content))
 
 ================================================================================
+assignments_4
+================================================================================
+
+{% let x %}
+{{ crate::some_function() }} = {{ a * b}}
+{% endlet %}
+
+--------------------------------------------------------------------------------
+
+(source
+  (control_tag
+    (let_statement
+      (identifier)))
+  (render_expression
+    (call_expression
+      (scoped_identifier
+        (identifier)
+        (identifier))
+      (arguments)))
+  (content)
+  (render_expression
+    (binary_expression
+      (identifier)
+      (identifier)))
+  (control_tag
+    (endlet_statement))
+  (content))
+
+================================================================================
 filter_blocks_1
 ================================================================================
 

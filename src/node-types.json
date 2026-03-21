@@ -650,6 +650,10 @@
           "named": true
         },
         {
+          "type": "endlet_statement",
+          "named": true
+        },
+        {
           "type": "endmacro_statement",
           "named": true
         },
@@ -3801,6 +3805,10 @@
   },
   {
     "type": "endif_statement",
+    "named": true
+  },
+  {
+    "type": "endlet_statement",
     "named": true
   },
   {

@@ -116,6 +116,7 @@ module.exports = grammar({
         $.include_statement,
         $.import_statement,
         $.let_statement,
+        $.endlet_statement,
         $.for_statement,
         $.break_statement,
         $.continue_statement,
@@ -159,6 +160,8 @@ module.exports = grammar({
         field('pattern', $._pattern),
         optional(seq('=', field('value', $._expression))),
       ),
+
+    endlet_statement: _ => 'endlet',
 
     for_statement: $ =>
       seq(

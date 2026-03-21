@@ -165,6 +165,7 @@
 
 [
   "let"
+  (endlet_statement)
   "mut"
   "set"
 ] @keyword

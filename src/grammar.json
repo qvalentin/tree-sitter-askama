@@ -350,6 +350,10 @@
         },
         {
           "type": "SYMBOL",
+          "name": "endlet_statement"
+        },
+        {
+          "type": "SYMBOL",
           "name": "for_statement"
         },
         {
@@ -599,6 +603,10 @@
           ]
         }
       ]
+    },
+    "endlet_statement": {
+      "type": "STRING",
+      "value": "endlet"
     },
     "for_statement": {
       "type": "SEQ",
