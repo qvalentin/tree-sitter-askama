@@ -408,6 +408,62 @@ calling_functions
   (content))
 
 ================================================================================
+creating_structs_1
+================================================================================
+
+{{ MyStruct { field1: 1, field2: "foo" }.to_string() }}
+
+--------------------------------------------------------------------------------
+
+(source
+  (render_expression
+    (call_expression
+      (field_expression
+        (struct_expression
+          (identifier)
+          (struct_field
+            (identifier)
+            (number_literal))
+          (struct_field
+            (identifier)
+            (string_literal)))
+        (field_identifier))
+      (arguments)))
+  (content))
+
+================================================================================
+creating_structs_2
+================================================================================
+
+{{ MyStruct { field1: 1, ..other_struct } }}
+{{ MyStruct { field1: 1, ..Default::default() } }}
+
+--------------------------------------------------------------------------------
+
+(source
+  (render_expression
+    (struct_expression
+      (identifier)
+      (struct_field
+        (identifier)
+        (number_literal))
+      (base_field_initializer
+        (identifier))))
+  (render_expression
+    (struct_expression
+      (identifier)
+      (struct_field
+        (identifier)
+        (number_literal))
+      (base_field_initializer
+        (call_expression
+          (scoped_identifier
+            (identifier)
+            (identifier))
+          (arguments)))))
+  (content))
+
+================================================================================
 base_template_1
 ================================================================================
 

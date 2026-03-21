@@ -47,6 +47,9 @@
 (field_expression
   field: (number_literal) @variable.member)
 
+(struct_field
+  name: (identifier) @variable.member)
+
 ; Specials
 (placeholder) @character.special
 
@@ -230,6 +233,7 @@
 [
   ","
   "."
+  ":"
   "::"
 ] @punctuation.delimiter
 

@@ -339,6 +339,7 @@ module.exports = grammar({
         $._literal,
         $.identifier,
         $.scoped_identifier,
+        $.struct_expression,
         $.field_expression,
         $.array_expression,
         $.tuple_expression,
@@ -419,6 +420,33 @@ module.exports = grammar({
           field('function', $._expression_except_range),
           field('arguments', $.arguments),
         ),
+      ),
+
+    struct_expression: $ =>
+      seq(
+        field('name', choice($.identifier, $.scoped_identifier)),
+        '{',
+        optional(
+          choice(
+            $.base_field_initializer,
+            seq(
+              sepBy1($.struct_field, ','),
+              choice(
+                optional(','),
+                seq(',', $.base_field_initializer),
+              ),
+            ),
+          ),
+        ),
+        '}',
+      ),
+
+    base_field_initializer: $ => seq('..', field('base', $._expression)),
+
+    struct_field: $ =>
+      seq(
+        field('name', $.identifier),
+        optional(seq(':', field('value', $._expression))),
       ),
 
     field_expression: $ =>
