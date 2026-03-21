@@ -118,6 +118,7 @@ module.exports = grammar({
         $.let_statement,
         $.endlet_statement,
         $.decl_statement,
+        $.compound_assignment_statement,
         $.for_statement,
         $.break_statement,
         $.continue_statement,
@@ -169,6 +170,17 @@ module.exports = grammar({
         choice('decl', 'declare'),
         optional('mut'),
         field('pattern', $._pattern),
+      ),
+
+    compound_assignment_statement: $ =>
+      seq(
+        'mut',
+        field('left', $._expression),
+        field(
+          'operator',
+          choice('+=', '-=', '*=', '/=', '%=', '&=', '|=', '^=', '<<=', '>>='),
+        ),
+        field('right', $._expression),
       ),
 
     for_statement: $ =>

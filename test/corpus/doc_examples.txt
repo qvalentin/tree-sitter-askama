@@ -231,6 +231,39 @@ assignments_5
   (content))
 
 ================================================================================
+assignments_6
+================================================================================
+
+{%- let mut counter = 0 -%}
+{%- for i in 1..=10 -%}
+    {%- mut counter += i -%}
+    {{ counter }}
+{% endfor -%}
+
+--------------------------------------------------------------------------------
+
+(source
+  (control_tag
+    (let_statement
+      (identifier)
+      (number_literal)))
+  (control_tag
+    (for_statement
+      (identifier)
+      (range_expression
+        (number_literal)
+        (number_literal))))
+  (control_tag
+    (compound_assignment_statement
+      (identifier)
+      (identifier)))
+  (render_expression
+    (identifier))
+  (control_tag
+    (endfor_statement))
+  (content))
+
+================================================================================
 filter_blocks_1
 ================================================================================
 
