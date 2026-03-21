@@ -166,8 +166,10 @@
 [
   "let"
   (endlet_statement)
-  "mut"
   "set"
+  "decl"
+  "declare"
+  "mut"
 ] @keyword
 
 [

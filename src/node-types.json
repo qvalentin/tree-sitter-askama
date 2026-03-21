@@ -622,6 +622,10 @@
           "named": true
         },
         {
+          "type": "decl_statement",
+          "named": true
+        },
+        {
           "type": "else_if_statement",
           "named": true
         },
@@ -710,6 +714,70 @@
           "named": true
         }
       ]
+    }
+  },
+  {
+    "type": "decl_statement",
+    "named": true,
+    "fields": {
+      "pattern": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "-",
+            "named": false
+          },
+          {
+            "type": "boolean_literal",
+            "named": true
+          },
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "number_literal",
+            "named": true
+          },
+          {
+            "type": "placeholder",
+            "named": true
+          },
+          {
+            "type": "remaining_field",
+            "named": true
+          },
+          {
+            "type": "scoped_identifier",
+            "named": true
+          },
+          {
+            "type": "slice_pattern",
+            "named": true
+          },
+          {
+            "type": "string_literal",
+            "named": true
+          },
+          {
+            "type": "struct_pattern",
+            "named": true
+          },
+          {
+            "type": "tuple_pattern",
+            "named": true
+          },
+          {
+            "type": "tuple_struct_pattern",
+            "named": true
+          }
+        ]
+      }
     }
   },
   {
@@ -3770,6 +3838,14 @@
   {
     "type": "continue_statement",
     "named": true
+  },
+  {
+    "type": "decl",
+    "named": false
+  },
+  {
+    "type": "declare",
+    "named": false
   },
   {
     "type": "defined",

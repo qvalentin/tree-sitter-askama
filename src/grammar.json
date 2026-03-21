@@ -354,6 +354,10 @@
         },
         {
           "type": "SYMBOL",
+          "name": "decl_statement"
+        },
+        {
+          "type": "SYMBOL",
           "name": "for_statement"
         },
         {
@@ -607,6 +611,44 @@
     "endlet_statement": {
       "type": "STRING",
       "value": "endlet"
+    },
+    "decl_statement": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "decl"
+            },
+            {
+              "type": "STRING",
+              "value": "declare"
+            }
+          ]
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "mut"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "FIELD",
+          "name": "pattern",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_pattern"
+          }
+        }
+      ]
     },
     "for_statement": {
       "type": "SEQ",

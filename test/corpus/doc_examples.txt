@@ -192,6 +192,45 @@ assignments_4
   (content))
 
 ================================================================================
+assignments_5
+================================================================================
+
+{% decl val -%}
+{% if len == 0 -%}
+  {% let val = "foo" -%}
+{% else -%}
+  {% let val = name -%}
+{% endif -%}
+{{ val }}
+
+--------------------------------------------------------------------------------
+
+(source
+  (control_tag
+    (decl_statement
+      (identifier)))
+  (control_tag
+    (if_statement
+      (binary_expression
+        (identifier)
+        (number_literal))))
+  (control_tag
+    (let_statement
+      (identifier)
+      (string_literal)))
+  (control_tag
+    (else_statement))
+  (control_tag
+    (let_statement
+      (identifier)
+      (identifier)))
+  (control_tag
+    (endif_statement))
+  (render_expression
+    (identifier))
+  (content))
+
+================================================================================
 filter_blocks_1
 ================================================================================
 
