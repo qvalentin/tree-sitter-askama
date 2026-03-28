@@ -30,7 +30,7 @@ enum TokenType {
 void *tree_sitter_askama_external_scanner_create() { return NULL; }
 
 // Nothing to destroy, since nothing was created
-void tree_sitter_askama_external_scanner_destroy() {}
+void tree_sitter_askama_external_scanner_destroy(void *payload) { (void)payload; }
 
 /*
  * Serialization functions
@@ -39,9 +39,9 @@ void tree_sitter_askama_external_scanner_destroy() {}
  * But we don't. So, they do nothing. Life's great.
  */
 
-unsigned tree_sitter_askama_external_scanner_serialize() { return 0; }
+unsigned tree_sitter_askama_external_scanner_serialize(void *payload, char *buffer) { (void)payload; (void)buffer; return 0; }
 
-void tree_sitter_askama_external_scanner_deserialize() {}
+void tree_sitter_askama_external_scanner_deserialize(void *payload, const char *buffer, unsigned length) { (void)payload; (void)buffer; (void)length; }
 
 // A small helper function that recognizes several flavors of whitespace
 static inline bool is_space(int32_t c) {
